@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, render_template, request
+import datetime
 
 from chatbot.chatbot import Chatbot
 
@@ -10,7 +11,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Ok. Your chatbot app is running. But the URL you used is missing the type_id and user_id path variables."
+    return f"Ok. Your chatbot app is running. But the URL you used is missing the type_id and user_id path variables.{datetime.datetime.today()} "
 
 
 @app.route("/<type_id>/<user_id>/chat")
